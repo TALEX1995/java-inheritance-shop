@@ -34,9 +34,11 @@ public class Carrello {
 				System.out.println("Hai una carta fedeltà? Rispondi si o no");
 				String card = in.nextLine().toLowerCase();
 				
+//				Sum with discount and without
 				float sum = 0;
 				float discountedSum = 0;
 				
+//				Cicle to sum all the price
 				for (int i = 0; i < products.length; i++) {
 			        if (products[i] != null) {
 			            
@@ -51,7 +53,7 @@ public class Carrello {
 				if(card.equals("si")) {
 					System.out.println("Considerando il possesso della carta fedeltà e applicando lo sconto, il prezzo totale è: " + discountedSum);
 				} else {
-					System.out.println(sum);
+					System.out.println("Non avendo la carta fedeltà il totale è: " + sum);
 				}
 				
 				in.close();		
