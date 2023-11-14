@@ -29,6 +29,16 @@ public class Headphones extends Prodotto {
 	}
 	
 	@Override
+	public float discountPrice() {
+		
+		if(isWireless) {
+			return super.discountPrice();
+		} else {
+			return super.fullPrice() - (super.fullPrice() * 0.07f);
+		}
+	}
+	
+	@Override
 	public String toString() {
 		
 		return "\nNuove Cuffie\n" + super.toString()

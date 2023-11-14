@@ -23,11 +23,36 @@ public class Carrello {
 //			Check if user want to add product
 			if(addProduct.equals("no")) {
 				
+//				Print all the product
 				for (int i = 0; i < products.length; i++) {
 			        if (products[i] != null) {
 			            System.out.println(products[i].toString());
 			        }
 			    }
+				
+//				Request if user have fidelity card
+				System.out.println("Hai una carta fedeltà? Rispondi si o no");
+				String card = in.nextLine().toLowerCase();
+				
+				float sum = 0;
+				float discountedSum = 0;
+				
+				for (int i = 0; i < products.length; i++) {
+			        if (products[i] != null) {
+			            
+			        	if(card.equals("si")) {
+			        		discountedSum += products[i].discountPrice();
+						} else {
+							sum += products[i].fullPrice();
+						}
+			        }
+			    }
+				
+				if(card.equals("si")) {
+					System.out.println("Considerando il possesso della carta fedeltà e applicando lo sconto, il prezzo totale è: " + discountedSum);
+				} else {
+					System.out.println(sum);
+				}
 				
 				in.close();		
 				break;
@@ -58,7 +83,8 @@ public class Carrello {
 //				Iva
 				System.out.println("Inserisci l'iva del prodotto");
 				String iva = in.nextLine();
-				float floatIva = Float.parseFloat(price);
+				float floatIva = Float.parseFloat(iva);
+				
 				
 				
 //				request based on product type

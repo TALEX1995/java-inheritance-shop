@@ -70,10 +70,12 @@ public class Prodotto {
 	}
 	
 //	Full price
-	public String fullPrice() {
-		float totIva = iva / 100 + 1;
-		float totalPrice = price * totIva;
-		return String.format("%.02f", totalPrice);
+	public float fullPrice() {
+		float totIva = price * iva / 100;
+		
+		float totalPrice = price + totIva;
+	
+		return totalPrice;
 	}
 	
 //	Formatted code
@@ -88,6 +90,10 @@ public class Prodotto {
 	    }
 
 	    return finalCode;
+	}
+	
+	public float discountPrice() {
+		return fullPrice() - (fullPrice() * 0.02f);
 	}
 	
 	@Override

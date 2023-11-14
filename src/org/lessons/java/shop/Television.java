@@ -29,6 +29,16 @@ public class Television extends Prodotto{
 	}
 	
 	@Override
+	public float discountPrice() {
+		
+		if(isSmart) {
+			return super.discountPrice();
+		} else {
+			return super.fullPrice() - (super.fullPrice() * 0.10f);
+		}
+	}
+	
+	@Override
 	public String toString() {
 
 		return "\nNuova tv\n" + super.toString()

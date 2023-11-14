@@ -29,6 +29,17 @@ public class Smartphone extends Prodotto {
 	}
 	
 	@Override
+	public float discountPrice() {
+		
+		if(memory >= 32) {
+			return super.discountPrice();
+		} else {
+			return super.fullPrice() - (super.fullPrice() * 0.05f);
+		}
+		
+	}
+	
+	@Override
 	public String toString() {
 		
 		return "\nNuovo Smartphone\n" + super.toString()
