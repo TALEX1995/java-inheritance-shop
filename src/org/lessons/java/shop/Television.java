@@ -31,7 +31,7 @@ public class Television extends Prodotto{
 	@Override
 	public String toString() {
 
-		return super.toString()
+		return "\nNuova tv\n" + super.toString()
 				+ "\nDimensioni: " + dimension + " pollici\n"
 				+ (isSmart ? "La TV è una Smart TV" : "La TV non è una Smart TV")
 				+ "\n---------------------------------\n";

@@ -31,7 +31,7 @@ public class Smartphone extends Prodotto {
 	@Override
 	public String toString() {
 		
-		return super.toString()
+		return "\nNuovo Smartphone\n" + super.toString()
 				+ "\nCodice IMEI: " + imeiCode
 				+ "\nMemoria del telefono: " + memory + "GB"
 				+ "\n---------------------------------\n";
