@@ -96,7 +96,7 @@ public class Prodotto {
 				+ "\nDescription: " + description 
 				+ "\nPrice: " + price 
 				+ "\nIva: " + iva 
-				+ "\n---------------------------------\n"; 
+				; 
 	}
 	
 }
